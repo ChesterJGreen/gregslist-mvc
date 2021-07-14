@@ -1,5 +1,6 @@
 import Car from "./Models/Car.js"
 import House from "./Models/House.js"
+import Job from "./Models/Jobs.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
@@ -22,6 +23,14 @@ class AppState extends EventEmitter {
       price: 3400,
       description: 'Lime Green! You gonna love it',
       imgUrl: 'https://static1.hotcarsimages.com/wordpress/wp-content/uploads/2020/07/Gremlin-X.jpg'
+    }),
+    new Car({
+      make: 'Ford',
+      model: 'F150 Raptor',
+      year: 2020,
+      price: 75000,
+      description: "It's pretty bad ass",
+      imgUrl: 'https://th.bing.com/th/id/OIP.Y2H89iTofXSNKAWpiNUGMgHaEm?pid=ImgDet&rs=1'
     })
   ]
   /** @type {House[]} */
@@ -57,6 +66,34 @@ class AppState extends EventEmitter {
       description: 'Have some caviar please!',
       imgUrl: 'https://th.bing.com/th/id/R.64c4bb2740de6e027427f02f9ad0090b?rik=hOUrHQVKdrEzlQ&pid=ImgRaw'
 
+    })
+  ]
+  jobs = [
+    new Job({
+      title: 'Software Developer',
+      company: 'Microsoft',
+      location: 'Boise, ID',
+      type: 'Full-Time',
+      description: 'Looking for someone who knows how to code. Specifically from Boise Codeworks!',
+      pay: 70000,
+      companyLogo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/375px-Microsoft_logo_%282012%29.svg.png'
+    }),
+    new Job({
+      title: 'Pest Control Technician',
+      company: 'Vanguard Pest Control',
+      location: 'Meridian, ID',
+      type: 'seasonal',
+      description: 'Looking for a seasonal applicator. No previous experience required',
+      companyLogo: 'https://vanguardpestcontrol.com/img/header-logo.png',
+      pay: 2500,
+    }),
+    new Job({
+      title: 'Sales',
+      company: 'Vivint solar',
+      location: 'Provo, UT',
+      type: 'seasonal',
+      description: 'Looking for a seasonal salesman. Will compensate tremendously if you can ever figure out how to talk people into this stuff!',
+      companyLogo: '..//assets/img/vivintLogo2.jpeg'
     })
   ]
 

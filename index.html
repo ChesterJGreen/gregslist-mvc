@@ -151,6 +151,70 @@
                 </div>
             </div> -->
         </div>
+        <div class="row">
+            <div class="col-12">
+                <h2>Jobs</h2>
+            </div>
+            <div class="col">
+                <form class="d-flex" onsubmit="app.jobsController.createJob()">
+                    <div class="form-group">
+                        <label for="title">Job Title</label>
+                        <input type="text" name="title" id="title" class="form-control" placeholder="Job Title..."
+                            required min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" name="company" id="company" class="form-control" placeholder="Company..."
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" name="location" id="location" class="form-control" placeholder="Location..."
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type">Type</label>
+                        <input type="text" name="type" id="type" class="form-control" placeholder="Type..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" name="description" id="description" class="form-control"
+                            placeholder="Description..." maxlength="240" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pay">Pay</label>
+                        <input type="number" name="pay" id="pay" class="form-control" placeholder="Pay..." required
+                            min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="companyLogo">Logo</label>
+                        <input type="text" name="companyLogo" id="companyLogo" class="form-control"
+                            placeholder="Logo...">
+                    </div>
+
+
+                    <div class="d-flex align-items-end pb-3">
+                        <button type="submit" class="btn btn-outline-success">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row" id="jobs">
+            <!-- <div class="col-md-3 col-sm-2 my-3">
+                <div class="car bg-light shadow">
+                    <img src="//placehold.it/200x200" class="w-100" alt="car">
+                    <div class="p-3">
+                        <div class="text-center">
+                            <p><b>Title - Company - location</b></p>
+                        </div>
+                        <p>DESCRIPTION</p>
+                        <p><em>Pay</em></p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
     </main>
     <footer class="bg-dark text-light">
         <div class="text-center">

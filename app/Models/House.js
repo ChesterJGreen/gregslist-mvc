@@ -16,7 +16,7 @@ export default class House {
     <div class="col-md-4 col-sm-3 my-3">
       <div class="house bg-light shadow">
         <img src="${this.imgUrl}" class="w-100" alt="${this.price}">
-        <div class="p-3>
+        <div class="p-3">
           <div class="text-center">
             <p><b>${this.sqFootage}SQ FT - ${this.bed}BEDS - ${this.bath}BATHS</b></p>
           </div>
