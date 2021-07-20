@@ -14,25 +14,38 @@ export default class JobsController {
 
   constructor() {
     ProxyState.on('jobs', _draw)
-    ProxyState.on('jobs', () => { console.log('new job') })
+    // ProxyState.on('jobs', () => { console.log('new job') })
     _draw()
   }
 
-  createJob() {
-    console.log('button pressed')
-    event.preventDefault()
-    let form = event.target
-    console.log(form.title.value)
-    let rawJob = {
-      title: form.title.value,
-      company: form.company.value,
-      location: form.location.value,
-      type: form.type.value,
-      description: form.description.value,
-      pay: form.pay.value,
-      companyLogo: form.companyLogo.value,
+  async createJob() {
+    try {
+      // console.log('creating job step 1')
+      event.preventDefault()
+      let form = event.target
+      // console.log(form.title.value)
+      let rawJob = {
+        jobTitle: form.jobTitle.value,
+        company: form.company.value,
+        rate: form.rate.value,
+        description: form.description.value,
+        hours: form.hours.value,
+        id: form.id.value
+
+      }
+      await jobsService.createJob(rawJob)
+      form.reset()
+    } catch (e) {
+      console.error(e)
+      window.alert(e.message)
     }
-    jobsService.createJob(rawJob)
-    form.reset()
+  }
+  deleteJob(jobId) {
+    // console.log('you are trying to delete a job by the id of', jobId)
+    jobsService.deleteJob(jobId)
+  }
+  bidJob(jobId) {
+    // console.log('you are bidding on the job with the id of' + jobId)
+    jobsService.bidJob(jobId)
   }
 }

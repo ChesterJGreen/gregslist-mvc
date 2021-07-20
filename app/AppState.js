@@ -70,31 +70,31 @@ class AppState extends EventEmitter {
   ]
   jobs = [
     new Job({
-      title: 'Software Developer',
+      jobTitle: 'Software Developer',
       company: 'Microsoft',
       location: 'Boise, ID',
-      type: 'Full-Time',
+      hours: 40,
       description: 'Looking for someone who knows how to code. Specifically from Boise Codeworks!',
-      pay: 70000,
+      rate: 70000,
       companyLogo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/375px-Microsoft_logo_%282012%29.svg.png'
     }),
     new Job({
-      title: 'Pest Control Technician',
+      jobTitle: 'Pest Control Technician',
       company: 'Vanguard Pest Control',
       location: 'Meridian, ID',
-      type: 'seasonal',
+      hours: 40,
       description: 'Looking for a seasonal applicator. No previous experience required',
       companyLogo: 'https://vanguardpestcontrol.com/img/header-logo.png',
-      pay: 2500,
+      rate: 2500,
     }),
     new Job({
-      title: 'Sales',
+      jobTitle: 'Sales',
       company: 'Vivint solar',
       location: 'Provo, UT',
-      type: 'seasonal',
+      hours: 40,
       description: 'Looking for a seasonal salesman. Will compensate tremendously if you can ever figure out how to talk people into this stuff!',
       companyLogo: '..//assets/img/vivintLogo2.jpeg',
-      pay: 3500
+      rate: 3500
     })
   ]
 

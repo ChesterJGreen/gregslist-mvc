@@ -1,26 +1,28 @@
 export default class Job {
 
-  constructor({ title, company, location, type, description, pay, companyLogo }) {
-    this.title = title
+  constructor({ jobTitle, company, location, rate, description, hours, companyLogo, id }) {
+    this.title = jobTitle
     this.company = company
     this.location = location
-    this.type = type
+    this.rate = rate
     this.description = description
-    this.pay = pay
+    this.hours = hours
     this.companyLogo = companyLogo || '//placehold.it/200x200'
+    this.id = id
   }
 
   get template() {
     return `
       <div class="col-md-3 col-sm-2 my-3">
         <div class="house bg-light shadow">
-          <img src="${this.companyLogo}" class="w-100" alt="${this.pay}">
-          <div class="p-3">
+          <div class="p-3 sticky">
             <div class="text-center">
-              <p><b>${this.title} - ${this.company} - ${this.location}</b></p>
+              <p><b>${this.company} - ${this.title} - ${this.location}</b></p>
             </div>
             <p>${this.description}</p>
-            <p><em>$${this.pay}</em></p>
+            <p class="text-center"><em>${this.hours} Hrs - $${this.rate}/year</em></p>
+            <button class="btn btn-info btn-block" onclick="app.jobsController.bidJob('${this.id}')"> bid </button>
+              <button class="btn btn-warning btn-block" onclick="app.jobsController.deleteJob('${this.id}')"> delete </button>
           </div>
         </div>
       </div>
