@@ -93,7 +93,8 @@ class AppState extends EventEmitter {
       location: 'Provo, UT',
       type: 'seasonal',
       description: 'Looking for a seasonal salesman. Will compensate tremendously if you can ever figure out how to talk people into this stuff!',
-      companyLogo: '..//assets/img/vivintLogo2.jpeg'
+      companyLogo: '..//assets/img/vivintLogo2.jpeg',
+      pay: 3500
     })
   ]
 
