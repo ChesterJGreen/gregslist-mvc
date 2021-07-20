@@ -13,25 +13,41 @@ export default class HousesController {
   constructor() {
 
     ProxyState.on('houses', _draw)
-    ProxyState.on('houses', () => { console.log('new house') })
+    // ProxyState.on('houses', () => { console.log('new house') })
     _draw()
   }
 
-  createHouse(event) {
-    event.preventDefault()
-    let form = event.target
-    let rawHouse = {
-      datePosted: form.datePosted.value,
-      sqFootage: form.sqFootage.value,
-      price: form.price.value,
-      bed: form.bed.value,
-      bath: form.bath.value,
-      address: form.address.value,
-      description: form.description.value,
-      imgUrl: form.imgUrl.value,
+  async createHouse() {
+    try {
+      event.preventDefault()
+      // console.log('creating house step 1')
+      let form = event.target
+      let rawHouse = {
+        year: form.year.value,
+        price: form.price.value,
+        bedrooms: form.bedrooms.value,
+        bathrooms: form.bathrooms.value,
+        // address: form.address.value,
+        description: form.description.value,
+        imgUrl: form.imgUrl.value,
+        levels: form.levels.value
 
+
+      }
+      await housesService.createHouse(rawHouse)
+      form.reset()
+    } catch (e) {
+      console.error(e)
+      window.alert(e.message)
     }
-    housesService.createHouse(rawHouse)
-    form.reset()
+  }
+  deleteHouse(houseId) {
+    // console.log('you are trying to delete a house by the id of', houseId)
+    housesService.deleteHouse(houseId)
+  }
+  bidHouse(houseId) {
+    // console.log('you are bidding on the house with the id of', houseId)
+    housesService.bidHouse(houseId)
+
   }
 }

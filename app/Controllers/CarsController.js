@@ -40,12 +40,12 @@ export default class CarsController {
     }
   }
   deleteCar(carId) {
-    console.log('you are trying to delete a car by the id of', carId)
+    // console.log('you are trying to delete a car by the id of', carId)
     carsService.deleteCar(carId)
   }
 
   bidCar(carId) {
-    console.log('you are bidding on the car with the id of', carId)
+    // console.log('you are bidding on the car with the id of', carId)
     carsService.bidCar(carId)
   }
 }

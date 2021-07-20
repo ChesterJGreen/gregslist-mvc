@@ -30,7 +30,7 @@ export default class Car {
                   <p><b>${this.year} - ${this.make} - ${this.model}</b></p>
               </div>
               <p>${this.description}</p>
-              <p><em>$${this.price}</em></p>
+              <p><em>$${this.price.toLocaleString("en-US")}</em></p>
               <button class="btn btn-info btn-block" onclick="app.carsController.bidCar('${this.id}')"> bid </button>
               <button class="btn btn-warning btn-block" onclick="app.carsController.deleteCar('${this.id}')"> delete </button>
           </div>
