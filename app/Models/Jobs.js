@@ -17,11 +17,11 @@ export default class Job {
         <div class="house bg-light shadow">
           <div class="p-3 sticky">
             <div class="text-center">
-              <p><b>${this.company} - ${this.title} - ${this.location}</b></p>
+              <p><b>${this.company} - ${this.title}</b></p>
             </div>
             <p>${this.description}</p>
             <p class="text-center"><em>${this.hours} Hrs - $${this.rate}/year</em></p>
-            <button class="btn btn-info btn-block" onclick="app.jobsController.bidJob('${this.id}')"> bid </button>
+            <button class="btn btn-info btn-block" onclick="app.jobsController.bidJob('${this.id}')"> RAISE </button>
               <button class="btn btn-warning btn-block" onclick="app.jobsController.deleteJob('${this.id}')"> delete </button>
           </div>
         </div>
