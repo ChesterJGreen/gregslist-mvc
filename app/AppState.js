@@ -69,47 +69,47 @@ class AppState extends EventEmitter {
     // })
   ]
   jobs = [
-    new Job({
-      jobTitle: 'Software Developer',
-      company: 'Microsoft',
-      location: 'Boise, ID',
-      hours: 40,
-      description: 'Looking for someone who knows how to code. Specifically from Boise Codeworks!',
-      rate: 70000,
-      companyLogo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/375px-Microsoft_logo_%282012%29.svg.png'
-    }),
-    new Job({
-      jobTitle: 'Pest Control Technician',
-      company: 'Vanguard Pest Control',
-      location: 'Meridian, ID',
-      hours: 40,
-      description: 'Looking for a seasonal applicator. No previous experience required',
-      companyLogo: 'https://vanguardpestcontrol.com/img/header-logo.png',
-      rate: 2500,
-    }),
-    new Job({
-      jobTitle: 'Sales',
-      company: 'Vivint solar',
-      location: 'Provo, UT',
-      hours: 40,
-      description: 'Looking for a seasonal salesman. Will compensate tremendously if you can ever figure out how to talk people into this stuff!',
-      companyLogo: '..//assets/img/vivintLogo2.jpeg',
-      rate: 3500
-    })
-  ]
+  //   new Job({
+  //     jobTitle: 'Software Developer',
+  //     company: 'Microsoft',
+  //     location: 'Boise, ID',
+  //     hours: 40,
+  //     description: 'Looking for someone who knows how to code. Specifically from Boise Codeworks!',
+  //     rate: 70000,
+  //     companyLogo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/375px-Microsoft_logo_%282012%29.svg.png'
+  //   }),
+  //   new Job({
+  //     jobTitle: 'Pest Control Technician',
+  //     company: 'Vanguard Pest Control',
+  //     location: 'Meridian, ID',
+  //     hours: 40,
+  //     description: 'Looking for a seasonal applicator. No previous experience required',
+  //     companyLogo: 'https://vanguardpestcontrol.com/img/header-logo.png',
+  //     rate: 2500,
+  //   }),
+  //   new Job({
+  //     jobTitle: 'Sales',
+  //     company: 'Vivint solar',
+  //     location: 'Provo, UT',
+  //     hours: 40,
+  //     description: 'Looking for a seasonal salesman. Will compensate tremendously if you can ever figure out how to talk people into this stuff!',
+  //     companyLogo: '..//assets/img/vivintLogo2.jpeg',
+  //     rate: 3500
+  //   })
+  // ]
 
-}
+// }
 
 
 export const ProxyState = new Proxy(new AppState(), {
-  get(target, prop) {
-    isValidProp(target, prop)
-    return target[prop]
-  },
-  set(target, prop, value) {
-    isValidProp(target, prop)
-    target[prop] = value
-    target.emit(prop, value)
-    return true
-  }
-})
+    get(target, prop) {
+      isValidProp(target, prop)
+      return target[prop]
+    },
+    set(target, prop, value) {
+      isValidProp(target, prop)
+      target[prop] = value
+      target.emit(prop, value)
+      return true
+    }
+  })
